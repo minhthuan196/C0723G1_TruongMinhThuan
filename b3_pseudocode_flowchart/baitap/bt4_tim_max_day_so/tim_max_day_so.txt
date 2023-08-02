@@ -1,0 +1,16 @@
+Begin
+	Input N
+	Input a1, a2, a3, ..., an
+	Max = a1
+	count = 0
+	while (count < N)
+	Do
+		i = count + 1
+		if( Max < a(i))
+			Max = a(i)
+			count = count + 1
+		else 
+			count = count + 1
+	Display Max
+End
+		

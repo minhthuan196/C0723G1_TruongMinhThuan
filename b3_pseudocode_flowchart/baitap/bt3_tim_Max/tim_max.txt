@@ -1,0 +1,17 @@
+Begin
+	Input A, B, C
+	Max = A
+	IF (Max < B)
+		Max = B
+		If (Max < C)
+			Max = C
+			Display Max
+		Else
+			Display Max
+	Else 
+		IF (Max < C)
+			Max = C
+			Display Max
+		Else
+			Display Max
+End

@@ -1,0 +1,5 @@
+Begin
+	Input M, P, C
+	Av = (M + P + C) / 3
+	Display Av
+End

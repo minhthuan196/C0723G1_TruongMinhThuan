@@ -1,0 +1,5 @@
+Begin
+	Input D
+	Vn = D*23000
+	Display Vn
+End

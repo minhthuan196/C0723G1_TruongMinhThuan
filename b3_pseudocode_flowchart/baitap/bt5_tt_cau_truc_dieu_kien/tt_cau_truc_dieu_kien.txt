@@ -1,0 +1,17 @@
+Begin
+	Input Dsv
+	IF (Dsv >= 75)
+		Display Loai A
+	Else
+		If ((Dsv < 75) AND (Dsv >= 60))
+			Display Loai B
+		Else
+			If ((Dsv < 60) AND (Dsv >= 45))
+				Display Loai C
+
+			Else
+				If ((Dsv < 45) AND (Dsv >= 35))
+					Display Loai D
+				Else 
+					Display Loai E
+End 	

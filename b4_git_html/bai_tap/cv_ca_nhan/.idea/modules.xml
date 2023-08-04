@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../../.idea/Codegym.iml" filepath="$PROJECT_DIR$/../../../../.idea/Codegym.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../b5_form_table/bai_tap/b1_form_register/.idea/b1_form_register.iml" filepath="$PROJECT_DIR$/../../../b5_form_table/bai_tap/b1_form_register/.idea/b1_form_register.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/cv_ca_nhan.iml" filepath="$PROJECT_DIR$/.idea/cv_ca_nhan.iml" />
     </modules>
   </component>

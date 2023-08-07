@@ -1,0 +1,15 @@
+let vatly = parseInt(prompt('Điểm vật lý: '));
+let hoahoc = parseInt(prompt( 'Điểm hóa học' ));
+let sinhhoc = parseInt(prompt( 'Điểm sinh học' ));
+    let dtb = (vatly+hoahoc+sinhhoc)/3;
+    let sum = vatly+hoahoc+sinhhoc;
+    document.write(' Điểm vật lý:'+vatly);
+    document.write('</br>');
+    document.write('Điểm hóa học: '+hoahoc);
+    document.write('</br>');
+    document.write('Điểm sinh học: '+sinhhoc);
+    document.write('</br>');
+    document.write('Điểm trung bình: '+dtb.toFixed(2));
+    document.write('</br>');
+    document.write('Tổng điểm: '+sum);
+    document.write('</br>');

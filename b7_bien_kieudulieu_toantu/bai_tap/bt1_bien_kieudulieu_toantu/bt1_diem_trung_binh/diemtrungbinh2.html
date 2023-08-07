@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Điểm trung bình</title>
+</head>
+<body>
+<input type="number" placeholder=" Điểm vật lý: " id="vl">
+<br>
+<input type="number" placeholder=" Điểm hóa học: " id="hh">
+<br>
+<input type="number" placeholder=" Điểm sinh học: " id="sh">
+<br>
+<p id ="dtb"></p>
+<p id ="sum"></p>
+<button onclick="clickc()">Kết quả:</button>
+<script>
+    function clickc(){
+        let vatly = parseInt(document.getElementById('vl').value);
+        let hoahoc = parseInt(document.getElementById('hh').value);
+        let sinhhoc = parseInt(document.getElementById('sh').value);
+        let ave=(vatly+hoahoc+sinhhoc)/3;
+        let sum= vatly+hoahoc+sinhhoc;
+        document.getElementById('dtb').innerHTML=('Điểm trung bình: '+ave.toFixed(2))
+        document.getElementById('sum').innerHTML=('Tổng điểm: '+ sum)
+    }
+</script>
+</body>
+</html>

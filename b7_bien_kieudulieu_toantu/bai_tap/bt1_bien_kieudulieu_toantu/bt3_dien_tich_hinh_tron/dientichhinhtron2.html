@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình tròn</title>
+</head>
+<body>
+    <input type="number" placeholder=" Nhập bán kính R: " id="r">
+    <button onclick="clickc()">Nhập R</button>
+    <p id ="S"></p>
+    <script>
+        function clickc(){
+         let R=document.getElementById('r').value;
+         const PI= 3.14;
+         let S= PI*R*R;
+        document.getElementById('S').innerHTML=('Diện tích hình tròn: '+S.toFixed(2))
+    }
+    </script>
+
+</body>
+</html>

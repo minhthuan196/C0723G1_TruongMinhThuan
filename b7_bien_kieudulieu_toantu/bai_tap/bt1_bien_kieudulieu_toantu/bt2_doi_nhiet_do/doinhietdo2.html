@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi nhiêt độ</title>
+</head>
+<body>
+    <input type="number" placeholder=" Độ c" id="c">
+    <button onclick="clickc()">Nhập</button>
+    <p id ="f"></p>
+<script>
+    function clickc(){
+        let C=document.getElementById('c').value;
+        let F = (9*C/5)+32;
+        document.getElementById('f').innerHTML=('Nhiêt độ F: '+F)
+    }
+</script>
+
+</body>
+</html>

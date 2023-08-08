@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><h3>Amount</h3></td>
+            <td><h3>From currency</h3></td>
+            <td><h3>To currency</h3></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="amount"></td>
+            <td>
+                <select id="select1">
+                    <option>VND</option>
+                    <option>USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="select2">
+                    <option>VND</option>
+                    <option>USD</option>
+                </select>
+            </td>
+            <td><button onclick="convertmoney()">Convert</button></td>
+        </tr>
+        <tr>
+            <td id="ketqua"></td>
+        </tr>
+    </table>
+    <script>
+        function convertmoney(){
+            let amountMoney = parseInt(document.getElementById('amount').value);
+            let fromCurrent = document.getElementById('select1').value;
+            let toCurrent = document.getElementById('select2').value;
+            if((fromCurrent=="VND") && (toCurrent=="USD")){
+                let result = amountMoney/23000;
+                document.getElementById('ketqua').innerHTML=('Result: '+ result +' $');
+
+            }
+            else if((fromCurrent=="USD") && (toCurrent=="VND")){
+                let result = amountMoney*23000;
+                document.getElementById('ketqua').innerHTML=('Result: '+result+' VND');
+            }
+            else if((fromCurrent=="VND") && (toCurrent=="VND")){
+                let result = amountMoney;
+                document.getElementById('ketqua').innerHTML=('Result: '+result+' VND');
+            }
+            else {
+                let result = amountMoney;
+                document.getElementById('ketqua').innerHTML=('Result: '+result+' $');
+            }
+        }
+    </script>
+</body>
+</html>

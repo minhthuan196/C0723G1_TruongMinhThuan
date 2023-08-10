@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học sinh</title>
+</head>
+<body>
+    <script>
+        let diemKT = +prompt("Nhập điểm kiểm tra: ");
+        let diemGK = +prompt("Nhập điểm thi giữa kỳ: ");
+        let diemCK = +prompt("Nhập điểm thi cuối kỳ: ");
+        let diemTB = (diemKT+diemGK+diemCK)/3;
+        if(diemTB>8){
+            alert("Xuất sắc");
+        }else if(diemTB>7){
+            alert("Tốt");
+        }else if(diemTB>6){
+            alert("Trung bình");
+        }else {
+            alert("Yếu")
+        }
+    </script>
+</body>
+</html>

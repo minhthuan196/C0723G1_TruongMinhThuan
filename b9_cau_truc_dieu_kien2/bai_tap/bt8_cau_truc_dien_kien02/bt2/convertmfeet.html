@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi m sang feet</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><h3>Nhập vào số cần đổi</h3></td>
+        <td><h3>Chọn đơn vị </h3></td>
+        <td><h3>Chọn đơn vị</h3></td>
+    </tr>
+    <tr>
+        <td><input type="number" id="number"></td>
+        <td>
+            <select id="selectFrom">
+                <option>m</option>
+                <option>feet</option>
+            </select>
+        </td>
+        <td>
+            <select id="selectTo">
+                <option>m</option>
+                <option>feet</option>
+            </select>
+        </td>
+        <td><button onclick="convertMFeet()">Convert</button></td>
+    </tr>
+    <tr>
+        <td id="result"></td>
+    </tr>
+</table>
+<script>
+    function convertMFeet(){
+        let inputNumber = parseInt(document.getElementById('number').value);
+        let fromCurrent = document.getElementById('selectFrom').value;
+        let toCurrent = document.getElementById('selectTo').value;
+        if((fromCurrent=="m") && (toCurrent=="feet")){
+            let result = inputNumber*3.2808;
+            document.getElementById('result').innerHTML=('Result: '+ result +' feet');
+
+        }
+        else if((fromCurrent=="feet") && (toCurrent=="m")){
+            let result = inputNumber/3.2808;
+            document.getElementById('result').innerHTML=('Result: '+result+' m');
+        }
+        else if((fromCurrent=="m") && (toCurrent=="m")){
+            let result = inputNumber;
+            document.getElementById('result').innerHTML=('Result: '+result+' m');
+        }
+        else {
+            let result = inputNumber;
+            document.getElementById('result').innerHTML=('Result: '+result+' feet');
+        }
+    }
+</script>
+</body>
+</html>

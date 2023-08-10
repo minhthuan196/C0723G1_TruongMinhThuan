@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim max</title>
+</head>
+<body>
+    <script>
+        let number1 = parseInt(prompt(" Nhập số thứ nhất: "));
+        let number2 = parseInt(prompt(" Nhập số thứ hai: "));
+        let number3 = parseInt(prompt(" Nhập số thứ ba: "));
+        let max = number1;
+        if(max > number2){
+            if(max > number3){
+                alert("sô lớn nhất "+ max);
+            } else {
+                max = number3;
+                alert("sô lớn nhất "+ max);
+            }
+        }else {
+            max = number2;
+            if(max >number3){
+                alert("sô lớn nhất "+ max);
+            }else {
+                max = number3;
+                alert("sô lớn nhất "+ max);
+            }
+        }
+    </script>
+</body>
+</html>

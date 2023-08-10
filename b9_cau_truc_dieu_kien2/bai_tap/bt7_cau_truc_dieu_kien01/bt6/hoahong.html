@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng</title>
+</head>
+<body>
+    <script>
+        let doanhSo= +prompt("Nhập doanh số bán hàng: ");
+        let hoaHong;
+        if(doanhSo>5000000){
+            hoaHong= doanhSo*10/100;
+        } else if(doanhSo>2000000){
+            hoaHong=doanhSo*5/100;
+        } else {
+            hoaHong=doanhSo*3/100;
+        }
+        alert(" Hoa hồng của bạn: "+hoaHong);
+    </script>
+</body>
+</html>

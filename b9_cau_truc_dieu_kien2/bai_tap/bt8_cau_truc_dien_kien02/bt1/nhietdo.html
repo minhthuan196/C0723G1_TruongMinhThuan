@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><h3>Nhiệt độ nhập vào</h3></td>
+        <td><h3>Chọn nhiệt độ</h3></td>
+        <td><h3>Chọn nhiệt độ cần đổi</h3></td>
+    </tr>
+    <tr>
+        <td><input type="number" id="nhietdo"></td>
+        <td>
+            <select id="selectFrom">
+                <option>C</option>
+                <option>F</option>
+            </select>
+        </td>
+        <td>
+            <select id="selectTo">
+                <option>C</option>
+                <option>F</option>
+            </select>
+        </td>
+        <td><button onclick="convertTemp()">Convert</button></td>
+    </tr>
+    <tr>
+        <td id="result"></td>
+    </tr>
+</table>
+<script>
+    function convertTemp(){
+        let inputTemp = parseInt(document.getElementById('nhietdo').value);
+        let fromCurrent = document.getElementById('selectFrom').value;
+        let toCurrent = document.getElementById('selectTo').value;
+        if((fromCurrent=="C") && (toCurrent=="F")){
+            let result = inputTemp*9/5+32;
+            document.getElementById('result').innerHTML=('Result: '+ result +' F');
+
+        }
+        else if((fromCurrent=="F") && (toCurrent=="C")){
+            let result = (inputTemp-32)*5/9;
+            document.getElementById('result').innerHTML=('Result: '+result+' C');
+        }
+        else if((fromCurrent=="C") && (toCurrent=="C")){
+            let result = inputTemp;
+            document.getElementById('result').innerHTML=('Result: '+result+' C');
+        }
+        else {
+            let result = inputTemp;
+            document.getElementById('result').innerHTML=('Result: '+result+' F');
+        }
+    }
+</script>
+</body>
+</html>

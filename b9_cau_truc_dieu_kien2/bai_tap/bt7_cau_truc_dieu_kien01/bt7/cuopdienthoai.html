@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cước điện thoại trong một tháng</title>
+</head>
+<body>
+    <script>
+        let phutGoi= +prompt(" Nhập số phút gọi trong 1 tháng: ");
+        let cuocDT;
+        if(phutGoi>100){
+            cuocDT= phutGoi*2000;
+        } else if( phutGoi>70){
+            cuocDT = phutGoi*1500;
+        } else if(phutGoi>50){
+            cuocDT=phutGoi*1000;
+        } else {
+            cuocDT=phutGoi*700;
+        }
+        alert("Tổng cước điện thoại trong một tháng: "+cuocDT)
+    </script>
+</body>
+</html>

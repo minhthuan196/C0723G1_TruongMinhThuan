@@ -10,6 +10,8 @@
         let b = +prompt("Nhập b: ");
         let c = +prompt("Nhập c: ");
         let x;
+        let x1;
+        let x2;
         let delta;
         if(a==0){
             if(b==0){
@@ -25,7 +27,15 @@
         } else {
             delta = b*b-4*a*c;
             if(delta<0){
-
+                alert("Phương trình vô nghiệm");
+            }else if (delta>0){
+                x1=(-b-Math.sqrt(delta))/2*a;
+                x2=(-b+Math.sqrt(delta))/2*a;
+                alert("Phương trình có nghiệm x1 = "+x1 +" và x2 = "+x2);
+            }
+            else {
+                x= -b/2*a;
+                alert("Phương trình có nghiệm x = "+x)
             }
         }
     </script>

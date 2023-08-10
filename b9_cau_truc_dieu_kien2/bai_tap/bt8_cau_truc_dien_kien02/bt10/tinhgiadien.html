@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+<script>
+    let inputNumber= +prompt(" Nhập số điện trong 1 tháng: ");
+    let priceD;
+    if(inputNumber>100){
+        priceD= inputNumber*2000;
+    } else if( inputNumber>70){
+        priceD = inputNumber*1500;
+    } else if(inputNumber>50){
+        priceD=inputNumber*1000;
+    } else {
+        priceD=inputNumber*700;
+    }
+    alert("Tổng cước điện trong một tháng: "+priceD)
+</script>
+</body>
+</html>

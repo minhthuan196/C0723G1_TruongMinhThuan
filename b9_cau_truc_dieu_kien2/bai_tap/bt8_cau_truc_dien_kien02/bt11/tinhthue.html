@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế</title>
+</head>
+<body>
+<script>
+    let tienLuong= +prompt("Nhập tiền lương: ");
+    let thue;
+    if(tienLuong>5000000){
+        thue= tienLuong*10/100;
+    } else if(tienLuong>2000000){
+        thue=tienLuong*5/100;
+    } else {
+        thue=tienLuong*3/100;
+    }
+    alert("Thuế thu nhập cá nhân: "+thue);
+</script>
+</body>
+</html>

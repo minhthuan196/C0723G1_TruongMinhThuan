@@ -5,18 +5,18 @@
     <title>Tính lãi ngân hàng</title>
 </head>
 <body>
-    <script>
-        let money = +prompt("Nhập số tiền ban đầu: ");
-        let month = +prompt("Nhập số năm cho vay: ");
-        let percent = +prompt("Lãi xuất cho vay hàng năm: ");
+<script>
+    let money = +prompt("Nhập số tiền ban đầu: ");
+    let month = +prompt("Nhập số năm cho vay: ");
+    let percent = +prompt("Lãi xuất cho vay hàng năm: ");
 
-        if(money>0 && month >0 && percent>0 ){
-            let totalMoney = money*Math.pow(money*(1+(percent/100/12)),month*12);
-            alert("Tổng sô tiền của bạn: "+totalMoney);
-        } else {
-            alert("Thông tin bạn nhập sai. Mời nhập lại");
-        }
+    if(money>0 && month >0 && percent>0 ){
+        let totalMoney = money*Math.pow(money*(1+(percent/100/12)),month*12);
+        alert("Tổng sô tiền của bạn: "+totalMoney);
+    } else {
+        alert("Thông tin bạn nhập sai. Mời nhập lại");
+    }
 
-    </script>
+</script>
 </body>
 </html>

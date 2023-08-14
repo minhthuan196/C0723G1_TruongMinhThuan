@@ -7,14 +7,13 @@
 <body>
     <script>
         let total =0;
-        let i = 0;
+        let i ;
         let count = 0;
-        while (count<30){
+        for ( i=0;count<30;i++){
             if(i % 7===0){
                 total = total +i;
                 count +=1;
             }
-            i++;
         }
         document.write("Tổng 30 số đầu tiên chia hết cho 7 trong số tự nhiên: "+total);
     </script>

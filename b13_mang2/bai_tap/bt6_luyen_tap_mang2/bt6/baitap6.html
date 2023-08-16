@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    do {
+        let n = +prompt("Nhập số phần tử của mảng? ");
+        if (!isNaN(n) && n > 0) {
+            for (let i = 0; i < n; i++) {
+                array1[i] = prompt(" Nhập phần tử thứ " + i + " của mảng");
+            }
+            break;
+        } else {
+            alert("Vui lòng nhập số lớn hơn 0")
+        }
+    } while (true)
+    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>");
+    for (let j = 0; j < array1.length; j++) {
+        if (array1[j] === "-") {
+            array1[j] = "_";
+        }
+    }
+    document.write("Mảng sau khi thay thế " + array1);
+</script>
+</body>
+</html>

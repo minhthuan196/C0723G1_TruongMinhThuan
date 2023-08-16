@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    do {
+        let n = +prompt("Nhập số phần tử của mảng? ");
+        if (!isNaN(n) && n > 0) {
+            for (let i = 0; i < n; i++) {
+                do {
+                    array1[i] = +prompt(" Nhập phần tử thứ " + i+ " của mảng");
+                    if (isNaN(array1[i])) {
+                        alert("Vui lòng nhập số nguyên");
+                    } else {
+                        break;
+                    }
+                } while (true)
+            }
+            break;
+        } else {
+            alert("Vui lòng nhập số lớn hơn 0")
+        }
+    } while (true)
+    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>")
+    let last = array1.length - 1;
+    for (let j = 0; j < last; j++) {
+        let a = array1[j];
+        array1[j] = array1[last];
+        array1[last] = a;
+        last--;
+    }
+    /*document.write(array1.reverse())*/
+    document.write(array1)
+</script>
+</body>
+</html>

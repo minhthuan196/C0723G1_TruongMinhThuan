@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    for (let i = 0; i < 10; i++) {
+        do {
+            let num = +prompt(" Nhập phần tử thứ " + i + " mảng:")
+            if (isNaN(num)) {
+                alert("Vui lòng nhập số nguyên");
+            } else {
+                array1[i] = num;
+                break;
+            }
+        } while (true)
+    }
+    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>")
+    let V;
+    do {
+        V = +prompt("Nhập số cần tìm: ");
+        if (isNaN(V)) {
+            alert("Vui lòng nhập số nguyên");
+        } else {
+            break;
+        }
+    } while (true)
+    let flag = false;
+    for (let j = 0; j < array1.length; j++) {
+        if (array1[j] === V) {
+            flag = true;
+        }
+    }
+    if (flag == true) {
+        document.write(V + " is in the array");
+    } else {
+        document.write(V + " is not in the array");
+    }
+</script>
+</body>
+</html>

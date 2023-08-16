@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let text1 = prompt("Nhap vao chuoi thứ nhất: ");
+    let text2 = prompt("Nhap vao chuoi thứ hai: ");
+    let flag = false;
+    if (text1.length === text2.length) {
+        for (let i = 0; i < text1.length; i++) {
+            if (text1[i] === text2[i]) {
+                flag = true;
+            } else {
+                flag = false;
+            }
+        }
+    } else {
+        flag = false;
+    }
+    if (flag === true) {
+        document.write("Hai chuỗi nhập vào giống nhau")
+    } else {
+        document.write("Hai chuỗi nhập vào không giống nhau")
+    }
+    /*console.log(text1);
+    console.log(text2);*/
+
+</script>
+</body>
+</html>

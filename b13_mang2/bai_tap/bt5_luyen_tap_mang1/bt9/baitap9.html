@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayA = new Array(10);
+    let arrayB = new Array(10);
+    let arrayC = new Array(20);
+    for (let i = 0; i < arrayA.length; i++) {
+        do {
+            let numA = +prompt(" Nhập phần tử thứ " + i + " mảng A:")
+            if (isNaN(numA)) {
+                alert("Vui lòng nhập số nguyên");
+            } else {
+                arrayA[i] = numA;
+                break;
+            }
+        } while (true)
+    }
+    document.write("Mảng A: " + arrayA + "</br>")
+    for (let j = 0; j < arrayB.length; j++) {
+        do {
+            let numB = +prompt(" Nhập phần tử thứ " + j + " mảng B:")
+            if (isNaN(numB)) {
+                alert("Vui lòng nhập số nguyên");
+            } else {
+                arrayB[j] = numB;
+                break;
+            }
+        } while (true)
+    }
+    document.write("Mảng B: " + arrayB + "</br>");
+    for (let h = 0; h < arrayA.length; h++) {
+        arrayC[h] = arrayA[h];
+    }
+    for (let k = 0; k < arrayB.length; k++) {
+        arrayC[arrayA.length + k] = arrayB[k];
+    }
+    document.write("Mảng C:" + arrayC + "</br>");
+    /*document.write(arrayC.length);*/
+</script>
+</body>
+</html>

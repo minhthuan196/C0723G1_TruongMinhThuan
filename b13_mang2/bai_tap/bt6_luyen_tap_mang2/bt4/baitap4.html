@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let text = prompt("Nhap vao chuoi bat ky: ");
+    let count = 0;
+    for (let i = 0; i < text.length; i++) {
+        if ((text[i] !== " " && text[i + 1] === " ")
+            || (text[i] !== " " && text[i + 1] === undefined)) {
+            count++;
+        }
+    }
+    document.write("Chuỗi bạn vừa nhập: " + text + "</br>");
+    document.write("Số ký tự có trong chuỗi: " + count)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 5</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    do {
+        let n = +prompt("Nhập số phần tử của mảng? ");
+        if (!isNaN(n) && n > 0) {
+            for (let i = 0; i < n; i++) {
+                do {
+                    array1[i] = +prompt(" Nhập phần tử thứ " + i + " của mảng");
+                    if (isNaN(array1[i])) {
+                        alert("Vui lòng nhập số nguyên");
+                    } else {
+                        break;
+                    }
+                } while (true)
+            }
+            break;
+        } else {
+            alert("Vui lòng nhập số lớn hơn 0")
+        }
+    } while (true)
+    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>")
+    let count = 0;
+    let result = "";
+    for (let j = 0; j < array1.length; j++) {
+        if (array1[j] < 0) {
+            count += 1;
+            result += array1[j] + ",";
+        }
+    }
+    document.write("Có " + count + " số nguyên âm" + "</br>");
+    document.write("Các số nguyên âm có trong mảng: " + result);
+</script>
+</body>
+</html>

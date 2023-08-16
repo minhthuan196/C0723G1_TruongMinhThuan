@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    for (let i = 0; i < 10; i++) {
+        do {
+            let num = +prompt(" Nhập phần tử thứ " + i + " mảng:")
+            if (isNaN(num)) {
+                alert("Vui lòng nhập số nguyên");
+            } else {
+                array1[i] = num;
+                break;
+            }
+        } while (true)
+    }
+    let max = array1[0];
+    let index = 0;
+    for (let j = 1; j < array1.length; j++) {
+        if (max < array1[j]) {
+            max = array1[j];
+            index = j;
+        }
+    }
+    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>")
+    document.write("Phần tử lớn nhất trong mảng: " + max + " .Nằm ở vị trí: " + index);
+</script>
+</body>
+</html>

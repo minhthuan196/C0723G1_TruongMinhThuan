@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h2>Từ Điển Anh Việt</h2>
+<input type="text" id="text" placeholder="Nhập từ tiếng anh">
+<input type="button" value="Dịch" onclick="dich()">
+<p id="result"></p>
+<script>
+    let arrayViet = ['mèo', 'gà', 'vịt', 'chó', 'heo'];
+    let arrayAnh = ['cat', 'chicken', 'duck', 'dog', 'pig'];
+
+    function dich() {
+        let text = document.getElementById('text').value;
+        let indexAnh = -1;
+        let indexViet = -1;
+        for (let i = 0; i < arrayAnh.length; i++) {
+            if (text === arrayAnh[i]) {
+                indexAnh = i;
+            }
+        }
+        for (let j = 0; j < arrayViet.length; j++) {
+            if (indexAnh === j) {
+                indexViet = j;
+            }
+        }
+        if (indexAnh === -1 && indexViet === -1) {
+            document.getElementById('result').innerText = ("Không tìm thấy")
+        } else {
+            document.getElementById('result').innerText = arrayViet[indexViet];
+        }
+
+    }
+
+</script>
+</body>
+</html>

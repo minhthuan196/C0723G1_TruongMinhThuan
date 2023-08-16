@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    for (let i = 0; i < 10; i++) {
+        do {
+            let num = +prompt(" Nhập phần tử thứ " + i + " mảng:")
+            if (isNaN(num)) {
+                alert("Vui lòng nhập số nguyên");
+            } else {
+                array1[i] = num;
+                break;
+            }
+        } while (true)
+    }
+    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>")
+    let count = 0;
+    while (count < array1.length) {
+        for (let j = 0; j < array1.length; j++) {
+            if (array1[j] < array1[j + 1]) {
+                let a = array1[j];
+                array1[j] = array1[j + 1];
+                array1[j + 1] = a;
+            }
+        }
+        count += 1;
+    }
+    document.write("Mảng giảm dần: " + array1);
+</script>
+</body>
+</html>

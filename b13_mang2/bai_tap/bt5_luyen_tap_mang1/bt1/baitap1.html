@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = [];
+    let count = 0;
+    let result = "";
+    for (let i = 0; i < 10; i++) {
+        do {
+            let num = +prompt(" Nhập phần tử thứ " + i + " mảng:")
+            if (isNaN(num)) {
+                alert("Vui lòng nhập số nguyên");
+            } else {
+                array1[i] = num;
+                break;
+            }
+        } while (true)
+    }
+    for (let j = 0; j < array1.length; j++) {
+        if (array1[j] >= 10) {
+            count += 1;
+            result += array1[j] + "&nbsp&nbsp";
+        }
+    }
+    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>")
+    document.write("Có " + count + " số lớn hơn hoặc bằng 10: " + result)
+</script>
+</body>
+</html>

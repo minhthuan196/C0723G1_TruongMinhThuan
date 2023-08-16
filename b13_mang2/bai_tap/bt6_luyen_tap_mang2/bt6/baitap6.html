@@ -11,7 +11,15 @@
         let n = +prompt("Nhập số phần tử của mảng? ");
         if (!isNaN(n) && n > 0) {
             for (let i = 0; i < n; i++) {
-                array1[i] = prompt(" Nhập phần tử thứ " + i + " của mảng");
+                do{
+                    array1[i] = prompt(" Nhập phần tử thứ " + i + " của mảng");
+                    if(array1[i].length!==1){
+                        alert("Vui lòng nhập lại. Mỗi phần tử chỉ một ký tự: ");
+                    }else {
+                        break;
+                    }
+
+                }while (true)
             }
             break;
         } else {

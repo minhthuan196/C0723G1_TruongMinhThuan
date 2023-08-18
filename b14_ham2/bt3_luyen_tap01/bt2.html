@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function add1(x) {
+        ++x;
+        return x;
+    }
+
+    do {
+        let inputNumber = +prompt("Nhập số bất kỳ: ");
+        if (!isNaN(inputNumber)) {
+            alert(add1(inputNumber));
+            break;
+        } else {
+            alert("Bạn vừa nhập không phải là số. Vui lòng nhập lại.");
+        }
+
+    } while (true)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function addNum(a, b) {
+        if (a > b) {
+            return "Số thứ nhất lớn hơn số thứ hai";
+        } else {
+            let sum;
+            sum = a + b;
+            return sum;
+        }
+    }
+
+    do {
+        let number1 = +prompt("Nhập số thứ nhất: ");
+        let number2 = +prompt("Nhập số thứ hai: ");
+        if (!isNaN(number1) && !isNaN(number2)) {
+            alert(addNum(number1, number2));
+            break;
+        } else {
+            alert("Bạn vừa nhập không phải là số. Vui lòng nhập lại.");
+        }
+
+    } while (true)
+
+</script>
+</body>
+</html>

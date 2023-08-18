@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findMin(a, b, c) {
+        let min = a;
+        if (min > b) {
+            min = b;
+            if (min > c) {
+                min = c;
+            }
+        } else {
+            if (min > c) {
+                min = c;
+            }
+        }
+        return min;
+    }
+
+    do {
+        let number1 = +prompt("Nhập số thứ nhất: ");
+        let number2 = +prompt("Nhập số thứ hai: ");
+        let number3 = +prompt("Nhập số thứ ba: ");
+
+        if (!isNaN(number1) && !isNaN(number2) && !isNaN(number3)) {
+            alert("Số nguyên nhỏ nhất trong ba số bạn vừa nhập: "
+                + findMin(number1, number2, number3));
+            break;
+        } else {
+            alert("Bạn vừa nhập vào không phải là số. Vui lòng nhập lại");
+        }
+
+    } while (true)
+
+</script>
+</body>
+</html>

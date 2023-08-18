@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function square(x) {
+        return x * x;
+    }
+
+    do {
+        let inputNum;
+        inputNum = +prompt("Nhập số: ");
+        if (!isNaN(inputNum)) {
+            alert("Bình phương của " + inputNum + " = " + square(inputNum));
+            break;
+        } else {
+            alert("Bạn vừa nhập vào không phải là số. Vui lòng nhập lại");
+        }
+
+    } while (true)
+
+</script>
+</body>
+</html>

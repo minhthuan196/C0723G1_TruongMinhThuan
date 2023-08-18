@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findArea(R) {
+        return Math.PI * R * R;
+    }
+
+    function findPerimeter(R) {
+        return 2 * Math.PI * R;
+    }
+
+    do {
+        let R;
+        R = +prompt("Nhập bán kính: ");
+        if (!isNaN(R) && R > 0) {
+            document.write("Diện tích hình tròn: " + findArea(R).toFixed(2) + "</br>");
+            document.write("Chu vi hình tròn: " + findPerimeter(R).toFixed(2));
+            break;
+        } else {
+            alert("Bán kính phải số lớn hơn  0");
+        }
+
+    } while (true)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function swap(arr) {
+        let temp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = temp;
+        return arr;
+    }
+
+    let inputNumber1 = +prompt("Nhập số thứ nhất: ");
+    let inputNumber2 = +prompt("Nhập số thứ hai: ");
+    let arr = [inputNumber1, inputNumber2];
+    document.write("2 số nhập vào: " + inputNumber1 + ", " + inputNumber2 + "</br>");
+    swap(arr);
+    inputNumber1 = arr[0];
+    inputNumber2 = arr[1]
+    document.write("2 số sau khi đổi chỗ: " + inputNumber1 + ", " + inputNumber2);
+</script>
+</body>
+</html>

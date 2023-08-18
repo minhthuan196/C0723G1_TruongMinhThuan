@@ -6,31 +6,32 @@
 </head>
 <body>
 <script>
-    let array1 = [];
-    do {
-        let n = +prompt("Nhập số phần tử của mảng? ");
-        if (!isNaN(n) && n > 0) {
-            for (let i = 0; i < n; i++) {
-                array1[i] = prompt(" Nhập phần tử thứ " + i + " của mảng");
-            }
-            break;
-        } else {
-            alert("Vui lòng nhập số lớn hơn 0")
-        }
-    } while (true)
-    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>");
-    let result = "";
-    for (let j = 0; j < array1.length; j++) {
-        result += array1[j] + ",";
-    }
-    let str = result.toString();
-    for (let k = 0; k < str.length; k++) {
-        if(str[k]==="-") {
-            str[k]="_";
-        }
-        document.write(result[k]);
-    }
-
+    // let array1 = [];
+    // do {
+    //     let n = +prompt("Nhập số phần tử của mảng? ");
+    //     if (!isNaN(n) && n > 0) {
+    //         for (let i = 0; i < n; i++) {
+    //             array1[i] = prompt(" Nhập phần tử thứ " + i + " của mảng");
+    //         }
+    //         break;
+    //     } else {
+    //         alert("Vui lòng nhập số lớn hơn 0")
+    //     }
+    // } while (true)
+    // document.write("Mảng của bạn vừa nhập: " + array1 + "</br>");
+    //
+    //
+    // let result = "";
+    // for (let j = 0; j < array1.length; j++) {
+    //     result += array1[j] + ",";
+    // }
+    //
+    // for (let k = 0; k < result.length; k++) {
+    //     if(result[k] ==="-") {
+    //         result[k]="_";
+    //     }
+    // }
+    // document.write(result);
     // document.write("Mảng sau sữa"+ array1);
 </script>
 </body>

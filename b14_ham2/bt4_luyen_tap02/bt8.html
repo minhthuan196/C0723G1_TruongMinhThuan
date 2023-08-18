@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function reverseArray(arr) {
+        let last = arr.length - 1;
+        for (let i = 0; i < last; i++) {
+            let a = arr[i];
+            arr[i] = arr[last];
+            arr[last] = a;
+            last--;
+        }
+        return arr;
+    }
+
+    let array1 = [];
+    do {
+        let n = +prompt("Nhập số phần tử của mảng? ");
+        if (!isNaN(n) && n > 0) {
+            for (let i = 0; i < n; i++) {
+                do {
+                    array1[i] = +prompt(" Nhập phần tử thứ " + i + " của mảng");
+                    if (isNaN(array1[i])) {
+                        alert("Vui lòng nhập số nguyên");
+                    } else {
+                        break;
+                    }
+                } while (true)
+            }
+            break;
+        } else {
+            alert("Vui lòng nhập số lớn hơn 0")
+        }
+    } while (true)
+    document.write("Mảng của bạn vừa nhập: " + array1 + "</br>");
+    document.write("Mảng sau khi đảo ngược : " + reverseArray(array1) + "</br>");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(c) {
+            this.c = c;
+        }
+
+        setC(c) {
+            this.c = c;
+        }
+
+        getC() {
+            return this.c;
+        }
+
+        cToF() {
+            return this.c * 9 / 5 + 32;
+        }
+
+        cToK() {
+            return this.c + 273.15;
+        }
+    }
+
+    let c = +prompt("Nhap nhiet do: ");
+    let nhietDo = new Temperature();
+    nhietDo.setC(c);
+    document.write("Nhiet do C: " + nhietDo.getC() + "</br>");
+    document.write("Nhiet do F: " + nhietDo.cToF() + "</br>");
+    document.write("Nhiet do K: " + nhietDo.cToK() + "</br>");
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(name, battery, draft, inbox, outbox, status) {
+            this.name = name;
+            this.battery = battery;
+            this.draft = draft;
+            this.inbox = inbox;
+            this.outbox = outbox;
+            this.status = status;
+        }
+
+        checkStatus() {
+            if (this.status === "ON") {
+                document.write(this.name + " máy đang bật </br>");
+            } else {
+                document.write(this.name + " máy đang tắt </br>");
+            }
+            this.battery--;
+        }
+
+        turnOnOFF() {
+            if (this.status === "ON") {
+                this.status = "OFF";
+                document.write(this.name + " Đang tắt </br>");
+                this.battery--;
+            } else {
+                this.status = "ON";
+                document.write(this.name + " Đang bật</br>");
+                this.battery--;
+            }
+        }
+
+        batteryCharger() {
+            while (this.battery < 100) {
+                this.battery++;
+            }
+        }
+
+        setMessageDraf() {
+            if (this.status === "ON") {
+                let message = prompt(this.name+" .Mời soạn tin nhắn thư nháp: ");
+                this.draft.unshift(message);
+                this.battery--;
+            } else {
+                document.write("Bạn cần bật điện thoại lên để soạn tin nhắn");
+            }
+        }
+
+        sendMessage(device) {
+            if (this.status === "ON") {
+                let message = prompt(this.name+ " Mời soạn tin nhắn để gửi: ");
+                this.outbox.unshift(message);
+                device.inbox.unshift(message);
+                this.battery--;
+            } else {
+                document.write("Bạn cần bật điện thoại lên để gửi tin nhắn");
+            }
+        }
+
+        viewOutbox() {
+            if (this.status === "ON") {
+                document.write(this.name + " Outbox: " + this.outbox + "</br>");
+                this.battery--;
+            } else {
+                document.write("Bạn câ bật điện thoại để xem tin đã gửi");
+            }
+        }
+
+        viewInbox() {
+            if (this.status === "ON") {
+                document.write(this.name + " Inbox: " + this.inbox + "</br>");
+                this.battery--;
+            } else {
+                document.write("Bạn cần bật điện thoại để xem hộp thư đến");
+            }
+        }
+
+        inforMobile() {
+            let str;
+            str = this.name.toString() + ","
+                + "battery: " + this.battery.toString() + ","
+                + "draft: " + this.draft.toString() + ","
+                + "inbox: " + this.inbox.toString() + ","
+                + "outbox: " + this.outbox.toString() + ","
+                + "status: " + this.status.toString() + "</br>";
+            document.write(str);
+        }
+    }
+
+    let nokia = new Mobile("Nokia 530", 70, [], [], [], "OFF");
+    let iphone = new Mobile("Iphone 13 pro max", 50, [], [], [], "OFF");
+
+    //show infor
+    nokia.inforMobile();
+    iphone.inforMobile();
+
+    //check máy đang tắt hay mở
+    nokia.checkStatus();
+    iphone.checkStatus();
+
+    //mở máy lên
+    nokia.turnOnOFF();
+    iphone.turnOnOFF();
+
+    //Sạc pin
+    nokia.batteryCharger();
+    iphone.batteryCharger();
+    document.write("% pin hiện tại của " + nokia.name + " " + nokia.battery + "</br>");
+    document.write("% pin hiện tại của " + iphone.name + " " + iphone.battery + "</br>");
+
+    //Soạn tin nhắn lưu vào thư nháp:
+    nokia.setMessageDraf();
+
+    //Soan tin nhắn và gửi cho máy iphone
+    nokia.sendMessage(iphone);
+    nokia.viewOutbox();
+    iphone.viewInbox();
+
+    //show infor
+    nokia.inforMobile();
+    iphone.inforMobile();
+
+
+</script>
+</body>
+</html>

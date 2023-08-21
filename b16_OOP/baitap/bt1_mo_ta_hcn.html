@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        constructor(chieuDai, chieuRong,) {
+            this.chieuDai = chieuDai;
+            this.chieuRong = chieuRong;
+        }
+
+        setChieuDai(chieuDai) {
+            this.chieuDai = chieuDai;
+        }
+
+        setChieuRong(chieuRong) {
+            this.chieuRong = chieuRong;
+        }
+
+        getChieuDai() {
+            return this.chieuDai;
+        }
+
+        getChieuRong() {
+            return this.chieuRong;
+        }
+
+        dienTich() {
+            return this.chieuDai * this.chieuRong;
+        }
+
+        chuVi() {
+            return (this.chieuDai + this.chieuRong) * 2;
+        }
+    }
+
+    let rectangle = new Rectangle(4, 3);
+    let chieuDai = rectangle.getChieuDai();
+    let chieuRong = rectangle.getChieuRong();
+    document.write("Chieu dai: " + chieuDai + "</br>");
+    document.write("Chieu rong: " + chieuRong + "</br>");
+    document.write("Dien tich hinh chu nhat: " + rectangle.dienTich() + "</br>");
+    document.write("Chu vi hinh chu nhat: " + rectangle.chuVi() + "</br>");
+
+    rectangle.setChieuDai(6);
+    rectangle.setChieuRong(5);
+    chieuDai = rectangle.getChieuDai();
+    chieuRong = rectangle.getChieuRong();
+    document.write("Chieu dai: " + chieuDai + "</br>");
+    document.write("Chieu rong: " + chieuRong + "</br>");
+    document.write("Dien tich hinh chu nhat: " + rectangle.dienTich() + "</br>");
+    document.write("Chu vi hinh chu nhat2: " + rectangle.chuVi() + "</br>");
+
+</script>
+
+</body>
+</html>

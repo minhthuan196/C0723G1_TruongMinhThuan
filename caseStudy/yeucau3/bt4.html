@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>MENU</h3>
+<p>1. Cafe(15k)</p>
+<p>2. Cam vắt(20k)</p>
+<p>3. Nước ép cà rốt(20k)</p>
+<p>4. Nước ép cà chua(20k)</p>
+<p>5. Nước lọc(10k)</p>
+<p>6. Nước dừa(15k)</p>
+<p>7. Thoát gọi món</p>
+<input type="button" value="Gọi món" onclick="chonMon()">
+<p id="result"></p>
+<script>
+    function chonMon() {
+        let mon;
+        let soLuong;
+        let nuoc = [1, 2, 3, 4, 5, 6];
+        let gia = [15, 20, 20, 20, 10, 15];
+        let sum = 0;
+        do {
+            mon = +prompt("Nhập số của món mà bạn muốn uống." +
+                " Lưu ý: Nhập các số trong Menu(7.Để thoát gọi món)");
+
+            if (mon === 7) {
+                let cancel = confirm("Bạn có muốn thoát gọi món ?")
+                if (cancel === true) {
+                    break;
+                }
+            } else if (mon <= 6 && mon >= 1) {
+                soLuong = +prompt("Nhập số lượng món mà bạn đã chọn: ");
+                for (let i = 0; i < nuoc.length; i++) {
+                    if (mon === nuoc[i]) {
+                        sum += gia[i] * soLuong;
+                    }
+                }
+            } else {
+                alert("Vui lòng nhập số có trong menu");
+            }
+        } while (true)
+        document.getElementById("result").innerHTML = ("Tổng số tiền bạn phải trả: " + sum + "k");
+    }
+</script>
+</body>
+</html>

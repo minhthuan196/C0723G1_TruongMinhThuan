@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [];
+    let b = [];
+    let n = +prompt("Nhập số phần từ mảng thứ nhất: ");
+    for (let i = 0; i < n; i++) {
+        a[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
+    }
+    let m = +prompt("Nhập số phần từ mảng thứ hai: ");
+    for (let i = 0; i < m; i++) {
+        b[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
+    }
+    let max = a[0] / b[0];
+    let index = 0;
+    let tu ;
+    let mau;
+    for (let i = 1; i < a.length; i++) {
+        if (max < a[i] / b[i]) {
+            max = a[i] / b[i];
+            tu =a[i];
+            mau=b[i];
+            index = i;
+        }
+    }
+    document.write("Mảng tử số: " + a + "</br>");
+    document.write("Mảng mẫu số: " + b + "</br>");
+    document.write("Phân số lớn nhất: "+tu+"/"+mau+" nằm ở vị trí: "+index);
+
+
+</script>
+</body>
+</html>

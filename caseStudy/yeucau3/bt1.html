@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    do{
+        let n = +prompt("Nhâp số phần tử của mảng: ");
+        if(n>0 && !isNaN(n)){
+            for(let i = 0;i<n;i++){
+                do{
+                    arr[i] = +prompt("Nhập phần tử thứ "+i+" của mảng: ");
+                    if(!isNaN(arr[i])){
+                        break;
+                    }else {
+                        alert("Vui lòng nhập số nguyên");
+                    }
+                }while (true)
+
+            }
+            break;
+        }else {
+            alert("Bạn vừa nhập vào không phải là số. Vui lòng nhập lại");
+        }
+    }while(true)
+    let arrPrefixSum=[];
+    arrPrefixSum[0] = arr[0];
+    for(let i =1; i<arr.length;i++){
+        arrPrefixSum[i] = arrPrefixSum[i-1]+arr[i];
+    }
+    document.write("Mảng ban đầu: "+arr+"</br>")
+    document.write("Mảng Prefix Sum của mảng ban đầu: "+arrPrefixSum+"</br>")
+
+</script>
+</body>
+</html>

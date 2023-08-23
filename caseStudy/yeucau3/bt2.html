@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let a = [];
+    let b = [];
+    let c = [];
+    let n = +prompt("Nhập số phần từ mảng thứ nhất: ");
+    for (let i = 0; i < n; i++) {
+        a[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
+    }
+    let m = +prompt("Nhập số phần từ mảng thứ hai: ");
+    for (let i = 0; i < m; i++) {
+        b[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
+    }
+    //Không dùng hàm includes
+    let flag = true;
+    let flag2 = true;
+    for (let i = 0; i < b.length; i++) {
+        for (let j = 0; j < a.length; j++) {
+            if (b[i] === a[j]) {
+                flag = false;
+            }
+        }
+        for (let k = 0; k < c.length; k++) {
+            if (b[i] === c[k]) {
+                flag2 = false;
+            }
+        }
+        if (flag === true && flag2 === true) {
+            c.push(b[i]);
+        } else {
+            flag = true;
+            flag2 = true;
+        }
+    }
+    //dung hàm include
+    // for(let i = 0;i<b.length;i++){
+    //     if(!a.includes(b[i]) && !c.includes(b[i])){
+    //         c.push(b[i]);
+    //     }
+    // }
+    document.write("Mảng thứ nhất: " + a + "</br>");
+    document.write("Mảng thứ hai: " + b + "</br>");
+    document.write("Mảng chứa các phần tử xuất hiện trong mảng thứ hai," +
+        "nhưng không xuất hiện trong mảng thứ nhất: " + c + "</br>");
+</script>
+</body>
+</html>

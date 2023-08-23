@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let h;
+    do {
+        h = +prompt("Nhập chiều cao h: ");
+        if (h > 0 && !isNaN(h)) {
+            break;
+        } else {
+            alert("Vui lòng nhập số")
+        }
+    } while (true);
+    for (let i = 1; i <= h; i++) {
+        for (let j = 1; j <= h - i; j++) {
+            document.write("&nbsp&nbsp");
+        }
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            document.write("*");
+        }
+        document.write("</br>");
+    }
+</script>
+</body>
+</html>

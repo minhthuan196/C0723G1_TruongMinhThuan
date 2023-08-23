@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luongNV;
+    do {
+        luongNV = prompt(" Nhập lương nhân viên: ");
+        if (luongNV > 0 && !isNaN(luongNV)) {
+            break;
+        } else {
+            alert("Vui lòng nhập lại")
+        }
+    } while (true)
+    let thue;
+    if (luongNV > 15000000) {
+        thue = 20 / 100 * luongNV;
+    } else if (luongNV > 7000000) {
+        thue = 0.1 * luongNV;
+    } else {
+        thue = 0.05 * luongNV;
+    }
+    let luongRong;
+    luongRong = luongNV - thue;
+    document.write("Thuế thu nhập: " + thue + "</br>");
+    document.write("Lương ròng: " + luongRong + "</br>");
+</script>
+</body>
+</html>

@@ -6,31 +6,62 @@
 </head>
 <body>
 <script>
-    let a = [];
-    let b = [];
-    let n = +prompt("Nhập số phần từ mảng thứ nhất: ");
-    for (let i = 0; i < n; i++) {
-        a[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
-    }
-    let m = +prompt("Nhập số phần từ mảng thứ hai: ");
-    for (let i = 0; i < m; i++) {
-        b[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
-    }
-    let max = a[0] / b[0];
+    let arrNumerators = [];
+    let arrDenominators = [];
+
+    do {
+        let n = +prompt("Nhập số phần từ mảng thứ nhất: ");
+        if (n > 0 && !isNaN(n)) {
+            for (let i = 0; i < n; i++) {
+                do {
+                    arrNumerators[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
+                    if (!isNaN(arrNumerators[i])) {
+                        break;
+                    } else {
+                        alert("Vui lòng nhập số nguyên");
+                    }
+                } while (true)
+            }
+            break;
+        } else {
+            alert("Vui lòng nhập số lớn hơn 0");
+        }
+    } while (true)
+
+    do {
+        let m = +prompt("Nhập số phần tử mảng thứ hai: ");
+        if (m > 0 && !isNaN(m)) {
+            for (let i = 0; i < m; i++) {
+                do {
+                    arrDenominators[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
+                    if (arrDenominators[i] > 0 && !isNaN(arrDenominators[i])) {
+                        break;
+                    } else {
+                        alert("Vui lòng nhập số nguyên");
+                    }
+                } while (true)
+            }
+            break;
+        } else {
+            alert("Vui lòng nhập số lớn hơn 0");
+        }
+    } while (true)
+
+    let max = arrNumerators[0] / arrDenominators[0];
     let index = 0;
-    let tu ;
-    let mau;
-    for (let i = 1; i < a.length; i++) {
-        if (max < a[i] / b[i]) {
-            max = a[i] / b[i];
-            tu =a[i];
-            mau=b[i];
+    let numerators;
+    let denominators;
+    for (let i = 1; i < arrNumerators.length; i++) {
+        if (max < arrNumerators[i] / arrDenominators[i]) {
+            max = arrNumerators[i] / arrDenominators[i];
+            numerators = arrNumerators[i];
+            denominators = arrDenominators[i];
             index = i;
         }
     }
-    document.write("Mảng tử số: " + a + "</br>");
-    document.write("Mảng mẫu số: " + b + "</br>");
-    document.write("Phân số lớn nhất: "+tu+"/"+mau+" nằm ở vị trí: "+index);
+    document.write("Mảng tử số: " + arrNumerators + "</br>");
+    document.write("Mảng mẫu số: " + arrDenominators + "</br>");
+    document.write("Phân số lớn nhất: " + numerators + "/" + denominators + " nằm ở vị trí: " + index);
 
 
 </script>

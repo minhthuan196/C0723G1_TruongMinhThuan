@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function differentSymbolsNaiv(str) {
+        let result = [];
+        for (let i = 0; i < str.length; i++) {
+            if (!result.includes(str[i])) {
+                result.push(str[i]);
+            }
+        }
+        return result;
+    }
+
+    let str = prompt("Nhập vào 1 chuỗi: ");
+    document.write("Chuỗi nhập vào: " + str + "</br>");
+    document.write("Có " + differentSymbolsNaiv(str).length +
+        " ký tự khác nhau trong chuỗi: " + differentSymbolsNaiv(str));
+
+</script>
+</body>
+</html>

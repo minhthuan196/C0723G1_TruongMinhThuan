@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sumArr(n, m) {
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = [];
+            for (let j = 0; j < m; j++) {
+                arr[i][j] = +prompt("Nhập phần tử tại vị trí [" + i + "][" + j + "]");
+            }
+        }
+        console.log(arr)
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] % 2 === 0) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    let n = +prompt("Nhập n hàng: ");
+    let m = +prompt("Nhập m cột: ");
+    console.log(("Tổng các số chẳn trong ma trận: " + sumArr(n, m)));
+</script>
+</body>
+</html>

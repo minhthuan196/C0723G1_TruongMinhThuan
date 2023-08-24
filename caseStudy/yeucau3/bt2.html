@@ -7,48 +7,80 @@
 <body>
 <script>
 
-    let a = [];
-    let b = [];
-    let c = [];
-    let n = +prompt("Nhập số phần từ mảng thứ nhất: ");
-    for (let i = 0; i < n; i++) {
-        a[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
-    }
-    let m = +prompt("Nhập số phần từ mảng thứ hai: ");
-    for (let i = 0; i < m; i++) {
-        b[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
-    }
-    //Không dùng hàm includes
-    let flag = true;
-    let flag2 = true;
-    for (let i = 0; i < b.length; i++) {
-        for (let j = 0; j < a.length; j++) {
-            if (b[i] === a[j]) {
-                flag = false;
+    let arrA = [];
+    let arrB = [];
+    let arrC = [];
+
+    do {
+        let n = +prompt("Nhập số phần từ mảng thứ nhất: ");
+        if (n > 0 && !isNaN(n)) {
+            for (let i = 0; i < n; i++) {
+                do {
+                    arrA[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
+                    if (!isNaN(arrA[i])) {
+                        break;
+                    } else {
+                        alert("Vui lòng nhập số nguyên");
+                    }
+                } while (true)
             }
-        }
-        for (let k = 0; k < c.length; k++) {
-            if (b[i] === c[k]) {
-                flag2 = false;
-            }
-        }
-        if (flag === true && flag2 === true) {
-            c.push(b[i]);
+            break;
         } else {
-            flag = true;
-            flag2 = true;
+            alert("Vui lòng nhập số lớn hơn 0");
         }
-    }
-    //dung hàm include
-    // for(let i = 0;i<b.length;i++){
-    //     if(!a.includes(b[i]) && !c.includes(b[i])){
-    //         c.push(b[i]);
+    } while (true)
+
+    do {
+        let m = +prompt("Nhập số phần tử mảng thứ hai: ");
+        if (m > 0 && !isNaN(m)) {
+            for (let i = 0; i < m; i++) {
+                do {
+                    arrB[i] = +prompt("Nhập phần tử thứ " + i + " của mảng: ");
+                    if (!isNaN(arrB[i])) {
+                        break;
+                    } else {
+                        alert("Vui lòng nhập số nguyên");
+                    }
+                } while (true)
+            }
+            break;
+        } else {
+            alert("Vui lòng nhập số lớn hơn 0");
+        }
+    } while (true)
+
+    //Không dùng hàm includes
+    // let flag = true;
+    // let flag2 = true;
+    // for (let i = 0; i < arrB.length; i++) {
+    //     for (let j = 0; j < arrA.length; j++) {
+    //         if (arrB[i] === arrA[j]) {
+    //             flag = false;
+    //         }
+    //     }
+    //     for (let k = 0; k < arrC.length; k++) {
+    //         if (arrB[i] === arrC[k]) {
+    //             flag2 = false;
+    //         }
+    //     }
+    //     if (flag === true && flag2 === true) {
+    //         arrC.push(arrB[i]);
+    //     } else {
+    //         flag = true;
+    //         flag2 = true;
     //     }
     // }
-    document.write("Mảng thứ nhất: " + a + "</br>");
-    document.write("Mảng thứ hai: " + b + "</br>");
+
+    //dùng hàm include
+    for (let i = 0; i < arrB.length; i++) {
+        if (!arrA.includes(arrB[i]) && !arrC.includes(arrB[i])) {
+            arrC.push(arrB[i]);
+        }
+    }
+    document.write("Mảng thứ nhất: " + arrA + "</br>");
+    document.write("Mảng thứ hai: " + arrB + "</br>");
     document.write("Mảng chứa các phần tử xuất hiện trong mảng thứ hai," +
-        "nhưng không xuất hiện trong mảng thứ nhất: " + c + "</br>");
+        "nhưng không xuất hiện trong mảng thứ nhất: " + arrC + "</br>");
 </script>
 </body>
 </html>

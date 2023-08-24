@@ -24,7 +24,7 @@
         let sum = 0;
         do {
             mon = +prompt("Nhập số của món mà bạn muốn uống." +
-                " Lưu ý: Nhập các số trong Menu(7.Để thoát gọi món)");
+                " Lưu ý: Nhập các số trong Menu (7.Để thoát gọi món)");
 
             if (mon === 7) {
                 let cancel = confirm("Bạn có muốn thoát gọi món ?")
@@ -38,11 +38,11 @@
                         sum += gia[i] * soLuong;
                     }
                 }
+                document.getElementById("result").innerHTML = ("Tổng số tiền bạn phải trả: " + sum + "k");
             } else {
                 alert("Vui lòng nhập số có trong menu");
             }
         } while (true)
-        document.getElementById("result").innerHTML = ("Tổng số tiền bạn phải trả: " + sum + "k");
     }
 </script>
 </body>

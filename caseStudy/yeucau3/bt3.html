@@ -49,19 +49,15 @@
 
     let max = arrNumerators[0] / arrDenominators[0];
     let index = 0;
-    let numerators;
-    let denominators;
     for (let i = 1; i < arrNumerators.length; i++) {
         if (max < arrNumerators[i] / arrDenominators[i]) {
             max = arrNumerators[i] / arrDenominators[i];
-            numerators = arrNumerators[i];
-            denominators = arrDenominators[i];
             index = i;
         }
     }
     document.write("Mảng tử số: " + arrNumerators + "</br>");
     document.write("Mảng mẫu số: " + arrDenominators + "</br>");
-    document.write("Phân số lớn nhất: " + numerators + "/" + denominators + " nằm ở vị trí: " + index);
+    document.write("Phân số lớn nhất: " + arrNumerators[index] + "/" + arrDenominators[index] + " nằm ở vị trí: " + index);
 
 
 </script>

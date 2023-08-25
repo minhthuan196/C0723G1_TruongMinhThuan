@@ -32,13 +32,20 @@
                     break;
                 }
             } else if (mon <= 6 && mon >= 1) {
-                soLuong = +prompt("Nhập số lượng món mà bạn đã chọn: ");
-                for (let i = 0; i < nuoc.length; i++) {
-                    if (mon === nuoc[i]) {
-                        sum += gia[i] * soLuong;
+                do {
+                    soLuong = +prompt("Nhập số lượng món mà bạn đã chọn: ");
+                    if (!isNaN(soLuong) && soLuong > 0) {
+                        for (let i = 0; i < nuoc.length; i++) {
+                            if (mon === nuoc[i]) {
+                                sum += gia[i] * soLuong;
+                            }
+                        }
+                        document.getElementById("result").innerHTML = ("Tổng số tiền bạn phải trả: " + sum + "k");
+                        break;
+                    } else {
+                        alert("Vui lòng nhập số lượng lớn hơn 0");
                     }
-                }
-                document.getElementById("result").innerHTML = ("Tổng số tiền bạn phải trả: " + sum + "k");
+                } while (true)
             } else {
                 alert("Vui lòng nhập số có trong menu");
             }

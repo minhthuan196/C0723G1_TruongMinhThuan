@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = prompt("Nhập vào số phần tử của mảng số nguyên");
+        if (!isNaN(n) && n > 0) {
+            break;
+        } else {
+            alert("Vui lòng nhập số lớn 0");
+        }
+    } while (true)
+
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        do {
+            arr[i] = prompt("Nhập phần tử thứ " + i + " của mảng");
+            if (!isNaN(arr[i])) {
+                break;
+            } else {
+                alert("Vui lòng nhập số nguyên");
+            }
+        } while (true)
+    }
+
+    function kiemTraGiam(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    if (kiemTraGiam(arr)) {
+        document.write("Mảng giảm");
+    } else {
+        document.write("mảng không giảm");
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("nhập chuỗi: ");
+    document.write("Chuũi ban đầu:" + str + "</br>");
+    let arr = [];
+    for (let i = 0; i < str.length; i++) {
+        arr.push(str[i]);
+    }
+    //arr = arr.reverse();
+    let last = arr.length - 1;
+    for (let i = 0; i < last; i++) {
+        let temp = arr[i];
+        arr[i] = arr[last]
+        arr[last] = temp;
+        last--;
+    }
+    let result = "";
+    for (let i = 0; i < arr.length; i++) {
+        result += arr[i];
+    }
+    document.write("Chuỗi sau khi đảo được:" + result);
+</script>
+</body>
+</html>

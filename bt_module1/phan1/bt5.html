@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập chuỗi: ");
+    let last = str.length - 1;
+    let flag = false;
+    for (let i = 0; i < last; i++) {
+        if (str[i] === str[last]) {
+            flag = true;
+        }
+        last--;
+    }
+    if (flag === true) {
+        document.write("chuỗi nhập vào đối xứng");
+    } else {
+        document.write("chuỗi nhập vào không đối xứng")
+    }
+</script>
+</body>
+</html>

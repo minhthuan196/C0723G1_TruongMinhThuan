@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a;
+    let b;
+    let c;
+    let delta;
+    do {
+        a = +prompt("Nhập a: ");
+        if (!isNaN(a)) {
+            break;
+        } else {
+            alert("Vui lòng nhập số");
+        }
+    } while (true)
+    do {
+        b = +prompt("Nhập b: ");
+        if (!isNaN(b)) {
+            break;
+        } else {
+            alert("Vui lòng nhập số");
+        }
+    } while (true)
+
+    do {
+        c = +prompt("Nhập c: ");
+        if (!isNaN(c)) {
+            break;
+        } else {
+            alert("Vui lòng nhập số");
+        }
+    } while (true)
+
+
+    if (a === 0) {
+        if (b === 0) {
+            if (c === 0) {
+                document.write("Phương trình có vô số nghiệm")
+            } else {
+                document.write("Phương trình vô nghiệm");
+            }
+        } else {
+            document.write("Phương trình có nghiệm x = " + (-c / b));
+        }
+    } else {
+        delta = (b * b) - (4 * a * c);
+        if (delta < 0) {
+            document.write("Phương trình vô nghiệm");
+        } else if (delta === 0) {
+            document.write("Phương trình có nghiệm kép x1 = x2 = " + (-b / 2 * a));
+        } else {
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            document.write("Phương trình có nghiệm x1 = " + x1 + "</br>");
+            document.write("Phương trình có nghiệm x2 = " + x2);
+        }
+    }
+</script>
+</body>
+</html>

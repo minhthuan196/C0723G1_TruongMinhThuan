@@ -17,11 +17,11 @@
     do {
         let inputNum;
         inputNum = +prompt("Nhập số: ");
-        if (!isNaN(inputNum)) {
+        if (!isNaN(inputNum) && inputNum >= 0) {
             document.write(inputNum + "!" + " = " + countFactorial(inputNum));
             break;
         } else {
-            alert("Bạn vừa nhập vào không phải là số. Vui lòng nhập lại");
+            alert("Bạn vừa nhập vào không phải là số tự nhiên. Vui lòng nhập lại");
         }
 
     } while (true)

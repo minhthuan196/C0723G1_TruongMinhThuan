@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="displaySortedByPriceLowToHigh()">Sắp xếp theo giá từ thấp đến cao</button>
+<button onclick="sortnguoc()">sortnguoc</button>
+<button onclick="addMayTinh()">ADD</button>
+<div id="root">
+    <table border="1">
+        <tr>
+            <th>Ma may</th>
+            <th>Ten</th>
+            <th>Hang SX</th>
+            <th>Gia</th>
+        </tr>
+    </table>
+</div>
+<script>
+    class MayTinh {
+        constructor(maMay, tenMay, hangSX, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.hangSX = hangSX;
+            this.giaBan = giaBan;
+        }
+
+        getMaMay() {
+            return this.maMay;
+        }
+
+        getTenMay() {
+            return this.tenMay;
+        }
+
+        getHangSX() {
+            return this.hangSX;
+        }
+
+        getGiaBan() {
+            return this.giaBan;
+        }
+
+        setMaMay(maMayMoi) {
+            this.maMay = maMayMoi;
+        }
+
+        setTenMay(tenMayMoi) {
+            this.tenMay = tenMayMoi;
+        }
+
+        setHangSX(hangSXMoi) {
+            this.hangSX = hangSXMoi;
+        }
+
+        setGiaBan(giaBanMoi) {
+            this.giaBan = giaBanMoi;
+        }
+
+        toString() {
+            let str;
+            return  str = "Ma may:" + this.getMaMay() +" Ten may:"+this.getTenMay()
+                +" Hang SX:" +this.getHangSX() + " Giá bán: "+this.getGiaBan();
+        }
+    }
+
+    //Mang chua du lieu may tinh
+    let arrMayTinh = [];
+    //khoi tao may tinh 1 theo setter
+    let maytinh1 = new MayTinh();
+    maytinh1.setMaMay("001");
+    maytinh1.setTenMay("Acer Aspire 7");
+    maytinh1.setHangSX("Acer");
+    maytinh1.setGiaBan("15000000");
+    //khoi tao may tinh 2 theo cach truy cap truc tiep
+    let maytinh2 = new MayTinh("002", "Acer Predator", "Acer", "12000000");
+    //dua cac doi tuong may tinh vao mang
+    arrMayTinh.push(maytinh1);
+    arrMayTinh.push(maytinh2);
+    console.log(arrMayTinh);
+    display();
+
+    function display() {
+        let table = `<table border="1">
+        <tr>
+            <th>Ma may</th>
+            <th>Ten</th>
+            <th>Hang SX</th>
+            <th>Gia</th>
+        </tr>`;
+        for (let i = 0; i < arrMayTinh.length; i++) {
+            table += `<tr>
+            <td>${arrMayTinh[i].getMaMay()}</td>
+            <td>${arrMayTinh[i].getTenMay()}</td>
+            <td>${arrMayTinh[i].getHangSX()}</td>
+            <td>${arrMayTinh[i].getGiaBan()}</td>
+        </tr>`
+        }
+        document.getElementById("root").innerHTML = table;
+    }
+
+    function displaySortedByPriceLowToHigh() {
+        let temp;
+        for (let i = 0; i < arrMayTinh.length; i++) {
+            for (let j = i; j < arrMayTinh.length; j++) {
+                if (arrMayTinh[i].getGiaBan() > arrMayTinh[j].getGiaBan()) {
+                    temp = arrMayTinh[i];
+                    arrMayTinh[i] = arrMayTinh[j];
+                    arrMayTinh[j] = temp;
+                }
+            }
+        }
+        display();
+    }
+
+    function sortnguoc() {
+        let temp;
+        for (let i = 0; i < arrMayTinh.length; i++) {
+            for (let j = i; j < arrMayTinh.length; j++) {
+                if (arrMayTinh[i].getGiaBan() < arrMayTinh[j].getGiaBan()) {
+                    temp = arrMayTinh[i];
+                    arrMayTinh[i] = arrMayTinh[j];
+                    arrMayTinh[j] = temp;
+                }
+            }
+        }
+        display();
+    }
+
+    function addMayTinh() {
+        do {
+            let id = prompt("Nhập ID:");
+            let flag = false;
+            for (let i = 0; i < arrMayTinh.length; i++) {
+                if (id === arrMayTinh[i].getMaMay()) {
+                    flag = true;
+                }
+            }
+            if (flag === true) {
+                alert("Mã máy đã bị trùng vui lòng nhập lại")
+            } else {
+                let teMay = prompt(" Nhập tên mays: ");
+                let hangSX = prompt("Nhập hãng sản xuất: ");
+                let giaBan = prompt("Nhâp giá bán: ");
+
+                let mayTinh3 = new MayTinh(id, teMay, hangSX, giaBan);
+                arrMayTinh.push(mayTinh3);
+                break;
+            }
+        } while (true)
+        display();
+    }
+    document.write(maytinh1.toString());
+</script>
+</body>
+</html>

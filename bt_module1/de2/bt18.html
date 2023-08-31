@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let result = "";
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === str[i].toUpperCase() && str[i] !== " ") {
+                result += str[i];
+            }
+        }
+        return result;
+    }
+
+    let str = prompt("Nhập chuỗi: ");
+    alert(checkString(str));
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a;
+    let b;
+    do {
+        a = +prompt("Nhập a: ");
+        if (!isNaN(a)) {
+            break;
+        } else {
+            alert("Vui lòng nhập số");
+        }
+    } while (true)
+    do {
+        b = +prompt("Nhập b: ");
+        if (!isNaN(b)) {
+            break;
+        } else {
+            alert("Vui lòng nhập số");
+        }
+    } while (true)
+
+    if (a === 0) {
+        if (b === 0) {
+            document.write("Phương trình có vô số nghiệm")
+        } else {
+            document.write("Phương trình vô nghiệm");
+        }
+    } else {
+        document.write("Phương trình có nghiệm x = " + (-b / a));
+    }
+</script>
+</body>
+</html>

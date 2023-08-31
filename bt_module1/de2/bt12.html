@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkDate(dateString) {
+        if (dateString.length === 10) {
+            let arr = dateString.split("/");
+            if (!isNaN(arr[0]) && !isNaN(arr[1]) && arr[2]) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    let str = prompt("Nhập ngày");
+    document.write(checkDate(str));
+</script>
+</body>
+</html>

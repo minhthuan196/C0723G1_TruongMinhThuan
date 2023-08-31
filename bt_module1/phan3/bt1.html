@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập n: ");
+    let countSNT = 0;
+    let k = 2;
+    while (countSNT <= n) {
+        let count = 0;
+        for (let i = 2; i <= k - 1; i++) {
+            if (k % i === 0) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            document.write(k + " ");
+            countSNT++;
+        }
+        k++;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sum = 0;
+    for (let i = 3; i < 5000; i++) {
+        for (let j = 1; j < i; j++) {
+            if (i % j === 0) {
+                sum += j;
+            }
+        }
+        if (sum === i) {
+            document.write(i + " ");
+        }
+        sum = 0;
+    }
+</script>
+</body>
+</html>

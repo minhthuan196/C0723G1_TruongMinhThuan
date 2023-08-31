@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        let countH = 0;
+        let countT = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] === str[i].toLowerCase()) {
+                countT++;
+            } else {
+                countH++;
+            }
+        }
+        if (countH === countT) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let str = prompt("Nhập vào chuỗi: ");
+    alert(checkString(str));
+</script>
+</body>
+</html>

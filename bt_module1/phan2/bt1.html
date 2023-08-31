@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<SCRIPT>
+    let str = prompt("Nhập vào một chuỗi");
+    document.write(str+"</br>");
+    let arr = str.split("");
+    arr = arr.reverse();
+    let reverseStr = "";
+    for (let i = 0; i < arr.length; i++) {
+        reverseStr += arr[i];
+    }
+    document.write(reverseStr);
+</SCRIPT>
+</body>
+</html>

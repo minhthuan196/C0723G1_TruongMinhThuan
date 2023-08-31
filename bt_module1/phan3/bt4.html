@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập n: ");
+    let f1 = 0;
+    let f2 = 1;
+    for (let i = 1; i <= n; i++) {
+        let f3;
+        f3 = f1 + f2;
+        document.write(f1 + " ");
+        f1 = f2;
+        f2 = f3;
+    }
+</script>
+</body>
+</html>

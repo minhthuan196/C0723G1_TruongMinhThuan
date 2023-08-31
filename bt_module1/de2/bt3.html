@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [14, 13, 11, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+    let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 17];
+
+    function tangDan(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false
+            }
+        }
+        return true;
+    }
+
+    function giamDan(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < arr[i + 1]) {
+                return false
+            }
+        }
+        return true;
+    }
+
+    if (tangDan(arr) || giamDan(arr)) {
+        document.write("Ok");
+    } else {
+        document.write("No");
+    }
+</script>
+</body>
+</html>

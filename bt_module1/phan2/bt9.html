@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+    let sumH = 0;
+    let sumC = 0;
+    let sumCh = 0;
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            sumH += arr[i][j];
+            if (i === j) {
+                sumCh += arr[i][j];
+            }
+        }
+        document.write("Tổng hàng thứ " + i + " = " + sumH + "</br>");
+        sumH = 0;
+    }
+    document.write("Tổng đường chéo chính của mảng: " + sumCh + "</br>");
+
+    while (count < arr.length) {
+        for (let i = 0; i < arr.length; i++) {
+            sumC += arr[i][count];
+        }
+        document.write("Tổng cột thứ " + count + " = " + sumC + "</br>");
+        sumC = 0;
+        count++;
+    }
+</script>
+</body>
+</html>

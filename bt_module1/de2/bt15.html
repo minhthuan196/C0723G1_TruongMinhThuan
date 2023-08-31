@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+    let max = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+    }
+    let arr2 = [];
+    let f1 = 0;
+    let f2 = 1;
+    for (let i = 1; i <= max; i++) {
+        let f3 = f1 + f2;
+        arr2.push(f1);
+        f1 = f2;
+        f2 = f3;
+    }
+    console.log(arr2);
+    for (let i = 0; i < arr.length; i++) {
+        if (!arr2.includes(arr[i])) {
+            document.write("NO");
+            break;
+        } else {
+            if (i === arr.length - 1) {
+                document.write("OK");
+            }
+        }
+    }
+</script>
+</body>
+</html>
